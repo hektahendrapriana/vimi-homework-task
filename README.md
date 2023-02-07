@@ -1,5 +1,5 @@
 # Getting Started with VIMI-HOMEWORK-TASK
-This project was bootstrapped with [Create React App](https://github.com/hektahendrapriana/vimi-homework-task).
+This project was bootstrapped with [Vimi Homework Task](https://github.com/hektahendrapriana/vimi-homework-task).
 
 
 ## COMPLATE TASK
