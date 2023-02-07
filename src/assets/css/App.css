@@ -241,13 +241,13 @@ body {
 
 
 .thead .col-1{
-  width: 40% !important;
+  width: 35% !important;
   position: relative;
   display: inline-block;
 }
 
 .thead .col-2{
-  width: 10% !important;
+  width: 15% !important;
   position: relative;
   display: inline-block;
 }
@@ -268,13 +268,13 @@ body {
 }
 
 .tbl .col-1{
-  width: 40% !important;
+  width: 35% !important;
   position: relative;
   display: inline-block;
 }
 
 .tbl .col-2{
-  width: 10% !important;
+  width: 15% !important;
   position: relative;
   display: inline-block;
 }
@@ -296,4 +296,46 @@ body {
 
 .bold {
   font-weight: bold !important;
+}
+
+.blue {
+  font-style: normal !important;
+  color: blue !important;
+}
+
+.feedback {
+  font-style: normal !important;
+  color: blue !important;
+}
+.editing {
+  font-style: normal !important;
+  color: gray !important;
+}
+.red {
+  font-style: normal !important;
+  color: red !important;
+}
+
+.icon-blue {
+  font-style: normal !important;
+  color: blue !important;
+}
+
+.icon-feedback {
+  font-style: normal !important;
+  color: blue !important;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+.icon-editing {
+  font-style: normal !important;
+  color: gray !important;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+.icon-red {
+  font-style: normal !important;
+  color: red !important;
 }

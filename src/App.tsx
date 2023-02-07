@@ -11,13 +11,15 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Api from './config/Api';
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { BsThreeDotsVertical, BsCheck2Circle, BsCalendar, BsCalendarCheck  } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import moment from 'moment'
 import { MultiSelect } from "react-multi-select-component";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Modal from 'react-bootstrap/Modal';
+import parser from 'html-react-parser'
 
 
 function App() {
@@ -185,6 +187,53 @@ function App() {
     setSort('desc')
     getDataList(url);
   }
+
+  var handleStatus = (status) => {
+    switch(status)
+    {
+      case 'COMPLETED':
+        return parser ( '<BsCheck2Circle className="icon-blue" /> <i className="blue">Completed</i>' )
+        break;
+
+      case 'FEEDBACK':
+        return parser ( '<span className="icon-feedback">2/2</span> <i className="feedback">Waiting for Feedback</i>' )
+        break;
+      
+      case 'EDITING':
+        return parser ( '<span className="icon-editing">1/3</span> <i className="editing">Video Editing</i>' )
+        break;
+      
+      case 'SHOOTING':
+        return  parser ( '<BsCalendarCheck className="icon-blue" /> <i className="blue">Shoot Schedule</i>' )
+        break;
+      
+      case 'INCOMPLETE':
+        return parser ( '<AiOutlineLoading3Quarters className="icon-red" /> <i className="red">Form Incomplete</i>' )
+        break;
+
+    }
+  }
+
+  var handleType = (tipe) => {
+    switch(tipe)
+    {
+      case 'educational':
+        return 'Educational'
+        break;
+
+      case 'testimonial':
+        return 'Testimonial'
+        break;
+      
+      case 'training':
+        return 'Corporate Training'
+        break;
+      
+      case 'recreational':
+        return 'Recreational'
+        break;
+    }
+  }
   return (
     <div className="App">
       <Row>
@@ -254,8 +303,8 @@ function App() {
                     dataList.map((item, i) => (
                       <tr key={i}>
                         <td className='col-1'>{item['name']}</td>
-                        <td className='col-2'>{item['type']}</td>
-                        <td className='col-3'>{item['status']}</td>
+                        <td className='col-2'>{handleType(item['type'])}</td>
+                        <td className='col-3'>{handleStatus(item['status'])}</td>
                         <td className='col-4'>{moment(item['createdOn']).format('MMM DD, YYYY')}</td>
                         <td className='text-center col-5'>
                           <NavDropdown title={<BsThreeDotsVertical />} className='' id="basic-nav-dropdown">
