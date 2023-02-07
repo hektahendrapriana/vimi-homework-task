@@ -51,16 +51,16 @@ The database on folder api/db.json
 
 run first API using this 
 
-### `json-server4000 api/db.json`
+### `json-server api/db.json`
 
 Loading api/db.json
 Done
 
 Resources
-http://localhost:4000/projects
+http://localhost:3000/projects
 
 Home
-http://localhost:4000
+http://localhost:3000
 
 
 and the run the project 
